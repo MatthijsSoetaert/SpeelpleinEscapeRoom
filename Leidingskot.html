@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="test()">
+    <div style="left: 10%;top: 20%; position: fixed;" id="div" hidden="false">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <div style="left: 10%;top: 20%; position: fixed;">
+        <p unselectable="on" onselectstart="return false">I</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function changeBackround() {
+            var r = Math.round(Math.random() * 254);
+            var g = Math.round(Math.random() * 254);
+            var b = Math.round(Math.random() * 254);
+
+            var r1 = Math.round(Math.random() * 254);
+            var g1 = Math.round(Math.random() * 254);
+            var b1 = Math.round(Math.random() * 254);
+            $("body").css("background-color","rgb(" +r+"," +g+"," +b+ ")")
+            $("p").css("color","rgb(" +r1+"," +g1+"," +b1+ ")")
+
+            console.log(r);
+
+
+        }
+
+        function test(){
+            setInterval(function () {
+                changeBackround()
+        }, 5);
+        }
+        
+
+
+    </script>
+</body>
+
+</html>
