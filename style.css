@@ -5,11 +5,19 @@
     transform: translate(-50%, -50%);
   }
 
-  #bg {
+  #bgop {
     position: fixed; 
     top: 0; 
     left: 0; 
     opacity: 0.2;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  #bg {
+    top: 0; 
+    left: 0; 
     /* Preserve aspet ratio */
     min-width: 100%;
     min-height: 100%;
