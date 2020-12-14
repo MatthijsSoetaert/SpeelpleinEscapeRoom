@@ -3,15 +3,14 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body onload="hide()">
     <video height="100%" controls>
-        <source src="Morse code.mp4" type="video/mp4">
+        <source src="../Morse code.mp4" type="video/mp4">
       Your browser does not support the video tag.
       </video>
-
 
     <input type="text" id="input" name="input">
     <button class=" btn btn-outline-primary" onclick="testInput()" type="button">test</button>
@@ -30,7 +29,6 @@
         function hide() {
             $("#Resultaat").hide()
             $("#Fout").hide()
-
         }
 
         function testInput() {
@@ -42,8 +40,6 @@
                 $("#Fout").show()
             }
         }
-
-
 
     </script>
 </body>

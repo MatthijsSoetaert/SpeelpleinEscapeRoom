@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body onload="test()">
+    <img src="../Backgrounds/GroteZaal.jpg" id="filledbg" alt="">
+
+    <button type="button">Terug</button>
+
+    <div class='centered' id='Rest'>
+        <p  style="background-color: white;">Laat de timer exact op 463 stoppen</p>
+        <br>
+        <p id='number' style="background-color: white;">0</p>
+        <button class=" btn btn-outline-primary" onclick="togglechange()" type="button">Stop</button>
+    </div>
+
+    <div class='centered' id='Resultaat'>
+        <p  style="background-color: white;">Link</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+        <script>
+            toggled = false;
+            counter = 0;
+
+            function togglechange(){
+                toggled = !toggled;
+                if(counter == 499){
+                    $("#Resultaat").show()
+                    $("#Rest").hide()
+                }
+            }
+
+            function change() {
+                if(!toggled){
+                    $("#number").text(counter) 
+                    counter = counter + 1
+                    if(counter == 503){
+                        counter = 0
+                    }
+                }
+            }
+
+            function test() {
+            $("#Resultaat").hide()
+
+            setInterval(function () {
+                change()
+            }, 10);
+        }
+        </script>
+</body>
+</html>
