@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body onload="hide()">
+
+
+    <div style="width: 20%; height: 20%; background-color: white;" class="centered">
+        <div style="text-align: center;" class="col">
+            <div class="row">
+                <h3>Wat is het tweede woord dat begint met een'd' dat je kan lezen wanneer Lukas volledig verzadigd is?</h3>
+            </div>
+            <div>
+                <h3>
+                    <a href='https://www.standaardkoekhandelgame.be/'>klik hier</a>
+                </h3>
+            </div>
+            <div>
+                <input type="text" id="input" name="input">
+            </div>
+            <div>
+                <button class=" btn btn-outline-primary mt-3" onclick="testInput()" type="button">bevestig</button>
+
+            </div>
+            <p id="Fout">De verkeerde link</p>
+            <div id="Resultaat">
+                <p >Ga in deze google meet: link hier</p>
+                <p >Speel verder op deze link: link hier</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        function hide() {
+            $("#Resultaat").hide()
+            $("#Fout").hide()
+        }
+
+        function testInput() {
+            if ($("#input").val() === "Degoutant" || $("#input").val() === "degoutant") {
+                $("#Resultaat").show()
+                $("#Fout").hide()
+            }
+            else {
+                $("#Fout").show()
+                $("#Resultaat").hide()
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
