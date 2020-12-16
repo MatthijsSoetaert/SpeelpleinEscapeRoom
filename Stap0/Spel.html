@@ -12,7 +12,7 @@
     <div style="width: 20%; height: 20%; background-color: white;" class="centered">
         <div style="text-align: center;" class="col">
             <div class="row">
-                <h3>Wat is het tweede woord dat begint met een'd' dat je kan lezen wanneer Lukas volledig verzadigd is?</h3>
+                <h3>Wat is het tweede woord dat begint met een 'd' dat je kan lezen wanneer Lukas volledig verzadigd is?</h3>
             </div>
             <div>
                 <h3>
@@ -28,8 +28,9 @@
             </div>
             <p id="Fout">De verkeerde link</p>
             <div id="Resultaat">
-                <p >Ga in deze google meet: link hier</p>
-                <p >Speel verder op deze link: link hier</p>
+                <a id='meetLink'>Ga in deze google meet</a>
+            </br>
+                <a id='spelLink'>Speel verder op deze link</a>
 
             </div>
         </div>
@@ -45,6 +46,18 @@
 
 
     <script>
+
+        function getUserLink(){
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const user = urlParams.get('user')
+            
+            switch(user){
+                case 'Philippe': $("#meetLink").attr("href","www.google.com"); $("#spelLink").attr("href","https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches1.html"); break;
+                case 'Matthijs': $("#meetLink").attr("href","www.facebook.com"); $("#spelLink").attr("href","https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches2.html"); break;
+            }
+        }
+
         function hide() {
             $("#Resultaat").hide()
             $("#Fout").hide()
@@ -54,6 +67,7 @@
             if ($("#input").val() === "Degoutant" || $("#input").val() === "degoutant") {
                 $("#Resultaat").show()
                 $("#Fout").hide()
+                getUserLink()
             }
             else {
                 $("#Fout").show()
