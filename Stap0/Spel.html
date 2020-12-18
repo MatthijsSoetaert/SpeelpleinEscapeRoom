@@ -12,7 +12,8 @@
     <div style="width: 20%; height: 20%; background-color: white;" class="centered">
         <div style="text-align: center;" class="col">
             <div class="row">
-                <h3>Wat is het tweede woord dat begint met een 'd' dat je kan lezen wanneer Lukas volledig verzadigd is?</h3>
+                <h3>Wat is het tweede woord dat begint met een 'd' dat je kan lezen wanneer Lukas volledig verzadigd is?
+                </h3>
             </div>
             <div>
                 <h3>
@@ -29,7 +30,7 @@
             <p id="Fout">De verkeerde link</p>
             <div id="Resultaat">
                 <a id='meetLink'>Ga in deze google meet</a>
-            </br>
+                </br>
                 <a id='spelLink'>Speel verder op deze link</a>
 
             </div>
@@ -47,14 +48,14 @@
 
     <script>
 
-        function getUserLink(){
+        function getUserLink() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const user = urlParams.get('user')
-            
-            switch(user){
-                case 'Philippe': $("#meetLink").attr("href","www.google.com"); $("#spelLink").attr("href","https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches1.html"); break;
-                case 'Matthijs': $("#meetLink").attr("href","www.facebook.com"); $("#spelLink").attr("href","https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches2.html"); break;
+
+            switch (user) {
+                case 'Philippe': $("#meetLink").attr("href", "www.google.com"); $("#spelLink").attr("href", "https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches1.html"); break;
+                case 'Matthijs': $("#meetLink").attr("href", "www.facebook.com"); $("#spelLink").attr("href", "https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches2.html"); break;
             }
         }
 
