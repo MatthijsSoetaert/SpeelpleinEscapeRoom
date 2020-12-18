@@ -6,12 +6,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
-
-    <button class="btn btn-outline-primary"
-        onclick="location.href=`https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Keuken.html`"
-        type="button">Kimberly</button>
-    <img src="../Backgrounds/Keuken.jpg" id="filledbg" alt="">
+<body onload="hide()">
 
     <style type="text/css">
         table.tableizer-table {
@@ -33,6 +28,13 @@
             background-color: grey;
         }
     </style>
+
+    <div id="Resultaat">
+        <a id='meetLink'>Ga in deze google meet voor volgende ronde: </a>
+        </br>
+        <a href='../Stap1/Winkel1_1.html'>Speel verder op deze link</a>
+        
+    </div>
 
     <table class="tableizer-table centered">
         <tbody>
@@ -113,6 +115,12 @@
 
 
     <script>
+
+        function hide() {
+            $("#Resultaat").hide()
+            $("#Fout").hide()
+        }
+
         function toggle(item) {
 
             let text = $(item).attr('id')
@@ -179,8 +187,8 @@
                 }
             }
 
-            if(!wrong){
-                alert("link")
+            if (!wrong) {
+                $("#Resultaat").show()
             }
         }
     </script>

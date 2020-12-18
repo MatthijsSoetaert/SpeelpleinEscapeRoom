@@ -1,0 +1,198 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body onload="hide()">
+
+    <style type="text/css">
+        table.tableizer-table {
+            font-size: 40px;
+            border: 1px solid #CCC;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: grey;
+        }
+
+        .tableizer-table td {
+            padding: 4px;
+            margin: 3px;
+            border: 1px solid #CCC;
+        }
+
+        td {
+            height: 100;
+            width: 100;
+            background-color: grey;
+        }
+    </style>
+
+    <div id="Resultaat">
+        <a id='meetLink'>Ga in deze google meet voor volgende ronde: </a>
+        </br>
+        <a href='../Stap1/Winkel1_1.html'>Speel verder op deze link</a>
+        
+    </div>
+
+    <table class="tableizer-table centered">
+        <tbody>
+            <tr class="outerText">
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="outerText">1</td>
+                <td id='11' onclick="toggle(this)"></td>
+                <td id='12' onclick="toggle(this)"></td>
+                <td id='13' onclick="toggle(this)"></td>
+                <td id='14' onclick="toggle(this)"></td>
+                <td id='15' onclick="toggle(this)"></td>
+                <td class="outerText" id='R1'>11-0</td>
+            </tr>
+            <tr>
+                <td class="outerText">2</td>
+                <td id='21' onclick="toggle(this)"></td>
+                <td id='22' onclick="toggle(this)"></td>
+                <td id='23' onclick="toggle(this)"></td>
+                <td id='24' onclick="toggle(this)"></td>
+                <td id='25' onclick="toggle(this)"></td>
+                <td class="outerText" id='R2'>12-0</td>
+            </tr>
+            <tr>
+                <td class="outerText">3</td>
+                <td id='31' onclick="toggle(this)"></td>
+                <td id='32' onclick="toggle(this)"></td>
+                <td id='33' onclick="toggle(this)"></td>
+                <td id='34' onclick="toggle(this)"></td>
+                <td id='35' onclick="toggle(this)"></td>
+                <td class="outerText" id='R3'>4-0</td>
+            </tr>
+            <tr>
+                <td class="outerText">4</td>
+                <td id='41' onclick="toggle(this)"></td>
+                <td id='42' onclick="toggle(this)"></td>
+                <td id='43' onclick="toggle(this)"></td>
+                <td id='44' onclick="toggle(this)"></td>
+                <td id='45' onclick="toggle(this)"></td>
+                <td class="outerText" id='R4'>3-0</td>
+            </tr>
+            <tr>
+                <td class="outerText">5</td>
+                <td id='51' onclick="toggle(this)"></td>
+                <td id='52' onclick="toggle(this)"></td>
+                <td id='53' onclick="toggle(this)"></td>
+                <td id='54' onclick="toggle(this)"></td>
+                <td id='55' onclick="toggle(this)"></td>
+                <td class="outerText" id='R5'>5-0</td>
+            </tr>
+            <tr class="outerText">
+                <td>&nbsp;</td>
+                <td id='C1'>6-0</td>
+                <td id='C2'>8-0</td>
+                <td id='C3'>13-0</td>
+                <td id='C4'>2-0</td>
+                <td id='C5'>3-0</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        function hide() {
+            $("#Resultaat").hide()
+            $("#Fout").hide()
+        }
+
+        function toggle(item) {
+
+            let text = $(item).attr('id')
+            let row = text.charAt(0)
+            let col = text.charAt(1)
+            let rowId = '#R' + row;
+            let colId = '#C' + col;
+
+            if ($(item).css('background-color') == 'rgb(128, 128, 128)') {
+                $(item).css('background-color', 'rgb(66, 176, 0)')
+
+                //ROWS
+                let currentNumber = parseInt($(rowId).text().split('-')[1])
+                currentNumber += parseInt(col);
+                $(rowId).text($(rowId).text().split('-')[0] + '-' + currentNumber)
+
+                //COLS
+                currentNumber = parseInt($(colId).text().split('-')[1])
+                currentNumber += parseInt(row);
+                $(colId).text($(colId).text().split('-')[0] + '-' + currentNumber)
+            }
+            else {
+                $(item).css('background-color', 'rgb(128, 128, 128)')
+
+                //ROWS
+                let currentNumber = parseInt($(rowId).text().split('-')[1])
+                currentNumber -= parseInt(col);
+                $(rowId).text($(rowId).text().split('-')[0] + '-' + currentNumber)
+
+                //COLS
+                currentNumber = parseInt($(colId).text().split('-')[1])
+                currentNumber -= parseInt(row);
+                $(colId).text($(colId).text().split('-')[0] + '-' + currentNumber)
+            }
+
+            checkComplete()
+        }
+
+        function checkComplete() {
+            wrong = false;
+
+            for (i = 1; i <= 5; i++) {
+                splitRow = $('#R' + i).text().split('-')
+                splitCol = $('#C' + i).text().split('-')
+
+                //ROWS
+                if (parseInt(splitRow[0]) == parseInt(splitRow[1])) {
+                    $('#R' + i).css('background-color', 'rgb(66, 176, 0)')
+                    console.log(splitRow)
+
+                }
+                else {
+                    $('#R' + i).css('background-color', 'rgb(128, 128, 128)')
+                    wrong = true
+                }
+
+                //COLS
+                if (parseInt(splitCol[0]) == parseInt(splitCol[1])) {
+                    $('#C' + i).css('background-color', 'rgb(66, 176, 0)')
+                }
+                else {
+                    $('#C' + i).css('background-color', 'rgb(128, 128, 128)')
+                    wrong = true
+                }
+            }
+
+            if (!wrong) {
+                $("#Resultaat").show()
+
+            }
+        }
+    </script>
+</body>
+
+</html>

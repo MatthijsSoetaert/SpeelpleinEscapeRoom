@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body onload="hide()">
+
+
+    <div style="width: 20%; height: 20%; background-color: white;" class="centered">
+        <div style="text-align: center;" class="col">
+            <div id='NaamBlok'>
+                <p>Wat is je naam? (zonder speciale tekens en volledig in hoofdletters)</p>
+                <div>
+                    <input type="text" id="nameInput" name="name">
+                </div>
+                <div>
+                    <button class=" btn btn-outline-primary mt-3" onclick="getUserLink()" type="button">bevestig</button>
+                </div>
+                </br>
+                </br>
+                </br>
+            </div>
+
+            <div id='ToegangscodeBlok'>
+                <div id='Toegangscode' class="row">
+                </div>
+                <div>
+                    <input type="text" id="input" name="input">
+                </div>
+                <div>
+                    <button class=" btn btn-outline-primary mt-3" onclick="testInput()" type="button">bevestig</button>
+                </div>
+                <p id="Fout">De verkeerde code</p>
+                <div id="Resultaat">
+                    <a href="./GroteZaal.html">Speel verder op deze link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+
+        function getUserLink() {
+            //const queryString = window.location.search;
+            //const urlParams = new URLSearchParams(queryString);
+            //const user = urlParams.get('user')
+
+            user = $("#nameInput").val()
+            let PhilippeCode = `
+                <div>
+                    <h3>start</h3>
+                    <h3 style="color: red;">Q</h3>
+                    <h3 style="color: blue;">I</h3>
+                </div>
+                `
+
+            let EliseCode = `
+                <div>
+                    <h3 style="color: blue;">E</h3>
+                    <h3 style="color: brown;">J</h3>
+                </div>
+                `
+
+            let ZoeCode = `
+                <div>
+                    <h3 style="color: brown;">N</h3>
+                    <h3 style="color: yellow;">S</h3>
+                </div>
+                `
+
+            let JoppeCode = `
+                <div>
+                    <h3 style="color: yellow;">D</h3>
+                    <h3 style="color: green;">Q</h3>
+                </div>
+                `
+
+            let MargotCode = `
+                <div>
+                    <h3 style="color: green;">E</h3>
+                    <h3 style="color: black;">I</h3>
+                </div>
+                `
+
+            let LennyCode = `
+                <div>
+                    <h3 style="color: black;">P</h3>
+                    <h3 style="color: orange;">C</h3>
+                </div>
+                `
+
+            let LieslCode = `
+                <div>
+                    <h3 style="color: orange;">N</h3>
+                    <h3 style="color: purple;">W</h3>
+                </div>
+                `
+
+            switch (user) {
+                case 'PHILIPPE': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'ELISE': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'ZOE': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'JOPPE': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'MARGOT': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'LENNY': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'LIESL': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+
+                case 'DAVEY': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'MAREC': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'KIARA': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'LAURA': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'KEJLL': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'MATHIAS': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                case 'KIMBERLY': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+                default: $('#ToegangscodeBlok').hide()
+            }
+        }
+
+        function hide() {
+            $("#Resultaat").hide()
+            $("#Fout").hide()
+            getUserLink()
+        }
+
+        function testInput() {
+            if ($("#input").val() === "QIEJNSDQEIPCNW" || $("#input").val() === "qiejnsdqeipcnw") {
+                $("#Resultaat").show()
+                $("#Fout").hide()
+                getUserLink()
+            }
+            else {
+                $("#Fout").show()
+                $("#Resultaat").hide()
+            }
+        }
+
+    </script>
+</body>
+
+</html>

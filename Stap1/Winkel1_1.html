@@ -6,12 +6,19 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<body onload="test()">
+<body onload="hide()">
     <img src="../Images/Waldo1.jpg" id="bg" alt="">
+    <h3>Wat is het voorwerp boven het hoofd van Wally?</h3>
     <input type="text" id="input" name="input">
     <button class=" btn btn-outline-primary" onclick="testInput()" type="button">test</button>
 
-    <p id="Resultaat">De juiste link</p>
+    <div id="Resultaat">
+        <a id='meetLink'>Ga in deze google meet voor volgende ronde: </a>
+        </br>
+        <a href='../Stap1/Winkel1_1.html'>Speel verder op deze link</a>
+        </br>
+        <a href="../Stap1/Winkel2_1.html">Help je teamgenoot om in de volgende ronde te raken via</a>
+    </div>
     <p id="Fout">Fout</p>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,11 +33,10 @@
         function hide() {
             $("#Resultaat").hide()
             $("#Fout").hide()
-
         }
 
         function testInput() {
-            if ($("#input").val() === "A4" || $("#input").val() === "a4") {
+            if ($("#input").val() === "Handschoen" || $("#input").val() === "handschoen") {
                 $("#Resultaat").show()
                 $("#Fout").hide()
             }

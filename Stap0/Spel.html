@@ -54,8 +54,22 @@
             const user = urlParams.get('user')
 
             switch (user) {
-                case 'Philippe': $("#meetLink").attr("href", "www.google.com"); $("#spelLink").attr("href", "https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches1.html"); break;
-                case 'Matthijs': $("#meetLink").attr("href", "www.facebook.com"); $("#spelLink").attr("href", "https://matthijssoetaert.github.io/SpeelpleinEscapeRoom/Stap1/Douches2.html"); break;
+                case 'Philippe': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Elise': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Zoe': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Joppe': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Margot': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Lenny': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Liesl': $("#meetLink").attr("href", "Link4"); $("#spelLink").attr("href", "../Stap1/Leidingskot.html"); break;
+
+                case 'Davey': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Marec': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Kiara': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Laura': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Kejll': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Mathias': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Kimberly': $("#meetLink").attr("href", "Link4"); $("#spelLink").attr("href", "../Stap1/Leidingskot.html"); break;
+
             }
         }
 
@@ -73,7 +87,6 @@
             else {
                 $("#Fout").show()
                 $("#Resultaat").hide()
-
             }
         }
 
