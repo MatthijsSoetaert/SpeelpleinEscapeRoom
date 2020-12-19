@@ -17,7 +17,8 @@
                     <input type="text" id="nameInput" name="name">
                 </div>
                 <div>
-                    <button class=" btn btn-outline-primary mt-3" onclick="getUserLink()" type="button">bevestig</button>
+                    <button class=" btn btn-outline-primary mt-3" onclick="getUserLink()"
+                        type="button">bevestig</button>
                 </div>
                 </br>
                 </br>
@@ -35,7 +36,9 @@
                 </div>
                 <p id="Fout">De verkeerde code</p>
                 <div id="Resultaat">
-                    <a href="./GroteZaal.html">Speel verder op deze link</a>
+                    <a href="../Stap3/final.html">Speel verder op deze link</a>
+                    </br>
+                    <a id='MeetLink'>Ga in deze google meet</a>
                 </div>
             </div>
         </div>
@@ -108,22 +111,25 @@
                 </div>
                 `
 
-            switch (user) {
-                case 'PHILIPPE': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'ELISE': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'ZOE': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'JOPPE': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'MARGOT': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'LENNY': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'LIESL': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+            let meetLink1 = 'https://meet.google.com/thk-gqhv-bst'
+            let meetLink2 = 'https://meet.google.com/zte-vtma-eui'
 
-                case 'DAVEY': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'MAREC': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'KIARA': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'LAURA': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'KEJLL': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'MATHIAS': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
-                case 'KIMBERLY': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#NaamBlok').hide(); break;
+            switch (user) {
+                case 'PHILIPPE': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'ELISE': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'ZOE': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'JOPPE': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'MARGOT': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'LENNY': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+                case 'LIESL': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink1); $('#NaamBlok').hide(); break;
+
+                case 'DAVEY': $("#Toegangscode").append(PhilippeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'MAREC': $("#Toegangscode").append(EliseCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'KIARA': $("#Toegangscode").append(ZoeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'LAURA': $("#Toegangscode").append(JoppeCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'KEJLL': $("#Toegangscode").append(MargotCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'MATHIAS': $("#Toegangscode").append(LennyCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
+                case 'KIMBERLY': $("#Toegangscode").append(LieslCode); $('#ToegangscodeBlok').show(); $('#MeetLink').attr('href', meetLink2); $('#NaamBlok').hide(); break;
                 default: $('#ToegangscodeBlok').hide()
             }
         }

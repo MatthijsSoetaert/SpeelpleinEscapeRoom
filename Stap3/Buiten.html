@@ -8,19 +8,34 @@
 
 <body onload="hide()">
     <img src="../Backgrounds/Buiten.jpg" id="filledbg" alt="">
-    <div class="centered">
-
+    <div class="centered" style="background-color: white;">
         <input type="text" id="input" name="input">
-        <button class=" btn btn-outline-primary" onclick="testInput()" type="button">test</button>
-    
+        <button id='test1' class=" btn btn-outline-primary" onclick="testInput()" type="button">test</button>
 
         <div id='Resultaat'>
             <iframe class='' width="100%" height="450" frameborder="0" style="border:0"
                 src="https://www.google.com/maps/embed/v1/streetview?location=50.8762,3.3389&key=AIzaSyCXD68LOKwRELXXwl95GuYSgD-f-ZblO-A"
                 allowfullscreen></iframe>
-            <p class='' style="background-color: white;">Kom uit de het speeplein; rechtdoor; rechtdoor; links; rechts;
-                links; rechts; rechts; links; rechtdoor; rechtdoor; rechtdoor; rechts; </p>
+            <p class='' style="background-color: white;">Kom uit de het speeplein; Rechts, links, Rechts, rechtdoor,
+                links, rechtdoor, links, rechts, tweede links, rechts, rechtdoor, links, rechtdoor, rechts, rechtdoor
+                over het kruispunt, rechtdoor, links, bij het huis met de groene imog vuilbak, hoeveel stukken was
+                hangen er hier aan de draad? </p>
+            <input type="text" id="input2" name="input">
+            <button id='test2' class=" btn btn-outline-primary" onclick="testInput2()" type="button">test</button>
+            <p id="Fout2" style="color: red;">Fout</p>
         </div>
+
+        <div id='Resultaat2' style="background-color: white;">
+            <a href="">Link naar de meet van team1</a>
+            </br>
+            <a href="">Link naar de meet van team2</a>
+            </br>
+            <a href="">Link naar de meet van team3</a>
+            </br>
+            <a href="../Stap2/Toegangscode.html">Link naar het volgende spel</a>
+            </br>
+        </div>
+
         <p id="Fout">Fout</p>
     </div>
 
@@ -36,7 +51,8 @@
         function hide() {
             $("#Resultaat").hide()
             $("#Fout").hide()
-
+            $("#Resultaat2").hide()
+            $("#Fout2").hide()
         }
 
         function testInput() {
@@ -44,9 +60,20 @@
                 $("#Resultaat").show()
                 $("#Fout").hide()
                 $("#input").hide()
+                $('#test1').hide()
             }
             else {
                 $("#Fout").show()
+            }
+        }
+
+        function testInput2() {
+            if ($("#input2").val() === "5" || $("#input2").val() === "5") {
+                $("#Resultaat2").show()
+                $("#Resultaat").hide()
+            }
+            else {
+                $("#Fout2").show()
             }
         }
     </script>

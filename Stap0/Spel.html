@@ -31,6 +31,7 @@
             <div id="Resultaat">
                 <a id='meetLink'>Ga in deze google meet</a>
                 </br>
+                <div id='extra'></div>
                 <a id='spelLink'>Speel verder op deze link</a>
 
             </div>
@@ -48,27 +49,45 @@
 
     <script>
 
+        let blok1Code = `
+                <div>
+                    <p>Dit zijn de google meet links van jouw teamgenoten, neem gerust een kijkje</p>
+                    <a href='https://meet.google.com/xfu-eabb-qio'>Team1</a>
+                    <a href='https://meet.google.com/wcy-wqkm-xvo'>Team2</a>
+                    <a href='https://meet.google.com/sxq-ddxf-xhp'>Team3</a>
+                </div>
+                `
+
+        let blok2Code = `
+                <div>
+                    <p>Dit zijn de google meet links van jouw teamgenoten, neem gerust een kijkje</p>
+                    <a href='https://meet.google.com/sis-nivt-hfh'>Team1</a>
+                    <a href='https://meet.google.com/ijn-yemm-jon'>Team2</a>
+                    <a href='https://meet.google.com/iuc-zirj-dko'>Team3</a>
+                </div>
+                `
+
         function getUserLink() {
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const user = urlParams.get('user')
 
             switch (user) {
-                case 'Philippe': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Elise': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Zoe': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Joppe': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Margot': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Lenny': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Liesl': $("#meetLink").attr("href", "Link4"); $("#spelLink").attr("href", "../Stap1/Leidingskot.html"); break;
+                case 'Philippe': $("#meetLink").attr("href", "https://meet.google.com/xfu-eabb-qio"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Elise': $("#meetLink").attr("href", "https://meet.google.com/xfu-eabb-qio"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Zoe': $("#meetLink").attr("href", "https://meet.google.com/wcy-wqkm-xvo"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Joppe': $("#meetLink").attr("href", "https://meet.google.com/wcy-wqkm-xvo"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Margot': $("#meetLink").attr("href", "https://meet.google.com/sxq-ddxf-xhp"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Lenny': $("#meetLink").attr("href", "https://meet.google.com/sxq-ddxf-xhp"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Liesl': $("#meetLink").hide(); $('#extra').append(blok1Code); $("#spelLink").attr("href", "../Stap2/GroteZaal.html"); break;
 
-                case 'Davey': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Marec': $("#meetLink").attr("href", "Link1"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Kiara': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Laura': $("#meetLink").attr("href", "Link2"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Kejll': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
-                case 'Mathias': $("#meetLink").attr("href", "Link3"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Kimberly': $("#meetLink").attr("href", "Link4"); $("#spelLink").attr("href", "../Stap1/Leidingskot.html"); break;
+                case 'Davey': $("#meetLink").attr("href", "https://meet.google.com/sis-nivt-hfh"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Marec': $("#meetLink").attr("href", "https://meet.google.com/sis-nivt-hfh"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Kiara': $("#meetLink").attr("href", "https://meet.google.com/ijn-yemm-jon"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Laura': $("#meetLink").attr("href", "https://meet.google.com/ijn-yemm-jon"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Kejll': $("#meetLink").attr("href", "https://meet.google.com/iuc-zirj-dko"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
+                case 'Mathias': $("#meetLink").attr("href", "https://meet.google.com/iuc-zirj-dko"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
+                case 'Liesl': $("#meetLink").hide(); $('#extra').append(blok2Code);$("#spelLink").attr("href", "../Stap2/GroteZaal.html"); break;
 
             }
         }
