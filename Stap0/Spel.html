@@ -11,29 +11,33 @@
 
     <div style="width: 20%; height: 20%; background-color: white;" class="centered">
         <div style="text-align: center;" class="col">
-            <div class="row">
-                <h3>Wat is het tweede woord dat begint met een 'd' dat je kan lezen wanneer Lukas volledig verzadigd is?
-                </h3>
+            <div id='Opgave'>
+                <div class="row">
+                    <h3>Wat is het tweede woord dat begint met een 'd' dat je kan lezen wanneer Lukas volledig verzadigd
+                        is?
+                    </h3>
+                </div>
+                <div>
+                    <h3>
+                        <a href='https://www.standaardkoekhandelgame.be/'>klik hier</a>
+                    </h3>
+                </div>
+                <div>
+                    <input type="text" id="input" name="input">
+                </div>
+                <div>
+                    <button class=" btn btn-outline-primary mt-3" onclick="testInput()" type="button">bevestig</button>
+                </div>
             </div>
-            <div>
-                <h3>
-                    <a href='https://www.standaardkoekhandelgame.be/'>klik hier</a>
-                </h3>
-            </div>
-            <div>
-                <input type="text" id="input" name="input">
-            </div>
-            <div>
-                <button class=" btn btn-outline-primary mt-3" onclick="testInput()" type="button">bevestig</button>
 
-            </div>
             <p id="Fout">De verkeerde link</p>
+
             <div id="Resultaat">
+                <p>Je opent best de links in een nieuw tablad zodat je de links uit de vorige spelen niet verliest</p>
                 <a id='meetLink'>Ga in deze google meet</a>
                 </br>
                 <div id='extra'></div>
                 <a id='spelLink'>Speel verder op deze link</a>
-
             </div>
         </div>
     </div>
@@ -46,12 +50,10 @@
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
         crossorigin="anonymous"></script>
 
-
     <script>
-
         let blok1Code = `
                 <div>
-                    <p>Dit zijn de google meet links van jouw teamgenoten, neem gerust een kijkje</p>
+                    <p>Jij hebt een speciale rol, je kan namelijk in de google meets van je teamgenoten die in duos verdeeld zijn. Jouw teamgenoten kunnen dit niet dus jij bent communicatiekanaal indien er dingen moeten overgedragen worden. De links naar de google meets zijn hieronder te vinden. Je opent best het volgende spel in een nieuw tablad zodat je deze pagina niet kwijtraakt.</p>
                     <a href='https://meet.google.com/xfu-eabb-qio'>Team1</a>
                     <a href='https://meet.google.com/wcy-wqkm-xvo'>Team2</a>
                     <a href='https://meet.google.com/sxq-ddxf-xhp'>Team3</a>
@@ -60,7 +62,7 @@
 
         let blok2Code = `
                 <div>
-                    <p>Dit zijn de google meet links van jouw teamgenoten, neem gerust een kijkje</p>
+                    <p>Jij hebt een speciale rol, je kan namelijk in de google meets van je teamgenoten die in duos verdeeld zijn. Jouw teamgenoten kunnen dit niet dus jij bent communicatiekanaal indien er dingen moeten overgedragen worden. De links naar de google meets zijn hieronder te vinden. Je opent best het volgende spel in een nieuw tablad zodat je deze pagina niet kwijtraakt.</p>
                     <a href='https://meet.google.com/sis-nivt-hfh'>Team1</a>
                     <a href='https://meet.google.com/ijn-yemm-jon'>Team2</a>
                     <a href='https://meet.google.com/iuc-zirj-dko'>Team3</a>
@@ -79,7 +81,7 @@
                 case 'Lenny': $("#meetLink").attr("href", "https://meet.google.com/wcy-wqkm-xvo"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
                 case 'Margot': $("#meetLink").attr("href", "https://meet.google.com/sxq-ddxf-xhp"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
                 case 'Liesl': $("#meetLink").attr("href", "https://meet.google.com/sxq-ddxf-xhp"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Joppe': $("#meetLink").hide(); $('#extra').append(blok1Code); $("#spelLink").attr("href", "../Stap2/GroteZaal.html"); break;
+                case 'Joppe': $("#meetLink").hide(); $('#extra').append(blok1Code); $("#spelLink").attr("href", "../Stap1/Keuken2.html"); break;
 
                 case 'Davey': $("#meetLink").attr("href", "https://meet.google.com/sis-nivt-hfh"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
                 case 'Mathias': $("#meetLink").attr("href", "https://meet.google.com/sis-nivt-hfh"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
@@ -87,7 +89,7 @@
                 case 'Laura': $("#meetLink").attr("href", "https://meet.google.com/ijn-yemm-jon"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
                 case 'Kejll': $("#meetLink").attr("href", "https://meet.google.com/iuc-zirj-dko"); $("#spelLink").attr("href", "../Stap1/Winkel1_1.html"); break;
                 case 'Kimberly': $("#meetLink").attr("href", "https://meet.google.com/iuc-zirj-dko"); $("#spelLink").attr("href", "../Stap1/Winkel2_1.html"); break;
-                case 'Marec': $("#meetLink").hide(); $('#extra').append(blok2Code);$("#spelLink").attr("href", "../Stap2/GroteZaal.html"); break;
+                case 'Marec': $("#meetLink").hide(); $('#extra').append(blok2Code); $("#spelLink").attr("href", "../Stap1/Keuken2.html"); break;
             }
         }
 
@@ -100,6 +102,7 @@
             if ($("#input").val() === "Degoutant" || $("#input").val() === "degoutant") {
                 $("#Resultaat").show()
                 $("#Fout").hide()
+                $("#Opgave").hide()
                 getUserLink()
             }
             else {
